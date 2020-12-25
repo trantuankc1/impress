@@ -1,0 +1,40 @@
+2020-12-25 07:24:33,696 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2020-12-25 07:24:33,701 INFO supervisord started with pid 1
+2020-12-25 07:24:34,705 INFO spawned: 'kyoto_ai_schedule_00' with pid 9
+2020-12-25 07:24:34,707 INFO spawned: 'kyoto_ai_queue_01' with pid 10
+2020-12-25 07:24:34,710 INFO spawned: 'kyoto_ai_queue_00' with pid 11
+2020-12-25 07:24:34,712 INFO spawned: 'kyoto_ai_queue_03' with pid 12
+2020-12-25 07:24:34,714 INFO spawned: 'kyoto_ai_queue_02' with pid 13
+2020-12-25 07:24:34,995 INFO exited: kyoto_ai_queue_02 (exit status 1; not expected)
+2020-12-25 07:24:34,999 INFO exited: kyoto_ai_queue_01 (exit status 1; not expected)
+2020-12-25 07:24:34,999 INFO exited: kyoto_ai_queue_00 (exit status 1; not expected)
+2020-12-25 07:24:35,000 INFO exited: kyoto_ai_queue_03 (exit status 1; not expected)
+2020-12-25 07:24:36,002 INFO success: kyoto_ai_schedule_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2020-12-25 07:24:36,004 INFO spawned: 'kyoto_ai_queue_01' with pid 44
+2020-12-25 07:24:36,007 INFO spawned: 'kyoto_ai_queue_00' with pid 45
+2020-12-25 07:24:36,009 INFO spawned: 'kyoto_ai_queue_03' with pid 46
+2020-12-25 07:24:36,012 INFO spawned: 'kyoto_ai_queue_02' with pid 47
+2020-12-25 07:24:36,215 INFO exited: kyoto_ai_queue_03 (exit status 1; not expected)
+2020-12-25 07:24:36,219 INFO exited: kyoto_ai_queue_02 (exit status 1; not expected)
+2020-12-25 07:24:36,219 INFO exited: kyoto_ai_queue_00 (exit status 1; not expected)
+2020-12-25 07:24:36,222 INFO exited: kyoto_ai_queue_01 (exit status 1; not expected)
+2020-12-25 07:24:38,227 INFO spawned: 'kyoto_ai_queue_01' with pid 72
+2020-12-25 07:24:38,229 INFO spawned: 'kyoto_ai_queue_00' with pid 73
+2020-12-25 07:24:38,232 INFO spawned: 'kyoto_ai_queue_03' with pid 74
+2020-12-25 07:24:38,234 INFO spawned: 'kyoto_ai_queue_02' with pid 75
+2020-12-25 07:24:38,439 INFO exited: kyoto_ai_queue_00 (exit status 1; not expected)
+2020-12-25 07:24:38,442 INFO exited: kyoto_ai_queue_01 (exit status 1; not expected)
+2020-12-25 07:24:38,446 INFO exited: kyoto_ai_queue_03 (exit status 1; not expected)
+2020-12-25 07:24:38,449 INFO exited: kyoto_ai_queue_02 (exit status 1; not expected)
+2020-12-25 07:24:41,454 INFO spawned: 'kyoto_ai_queue_01' with pid 100
+2020-12-25 07:24:41,456 INFO spawned: 'kyoto_ai_queue_00' with pid 101
+2020-12-25 07:24:41,459 INFO spawned: 'kyoto_ai_queue_03' with pid 102
+2020-12-25 07:24:41,461 INFO spawned: 'kyoto_ai_queue_02' with pid 103
+2020-12-25 07:24:41,673 INFO exited: kyoto_ai_queue_02 (exit status 1; not expected)
+2020-12-25 07:24:41,674 INFO gave up: kyoto_ai_queue_02 entered FATAL state, too many start retries too quickly
+2020-12-25 07:24:41,674 INFO exited: kyoto_ai_queue_03 (exit status 1; not expected)
+2020-12-25 07:24:41,675 INFO gave up: kyoto_ai_queue_03 entered FATAL state, too many start retries too quickly
+2020-12-25 07:24:41,681 INFO exited: kyoto_ai_queue_01 (exit status 1; not expected)
+2020-12-25 07:24:41,682 INFO gave up: kyoto_ai_queue_01 entered FATAL state, too many start retries too quickly
+2020-12-25 07:24:41,682 INFO exited: kyoto_ai_queue_00 (exit status 1; not expected)
+2020-12-25 07:24:42,684 INFO gave up: kyoto_ai_queue_00 entered FATAL state, too many start retries too quickly
