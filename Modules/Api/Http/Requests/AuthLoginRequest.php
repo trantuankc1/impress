@@ -4,6 +4,14 @@ namespace Modules\Api\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @OA\Schema(
+ *     properties={
+ *          @OA\Property(property="email", type="string"),
+ *          @OA\Property(property="password", type="string")
+ *     }
+ * )
+ */
 class AuthLoginRequest extends FormRequest
 {
     /**
