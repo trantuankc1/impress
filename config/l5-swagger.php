@@ -26,15 +26,49 @@ return [
                 'docs_yaml' => 'api-docs.yaml',
 
                 /*
-                * Set this to `json` or `yaml` to determine which documentation file to use in UI
+                 * Absolute paths to directory containing the swagger annotations are stored.
                 */
-                'format_to_use_for_docs' => env('L5_FORMAT_TO_USE_FOR_DOCS', 'json'),
+                'annotations' => [
+                    base_path('Modules/Api/Http/Controllers'),
+                    base_path('Modules/Api/Http/Requests'),
+                    base_path('Modules/Api/Transformers'),
+                ],
+
+            ],
+        ],
+        'v1' => [
+            'api' => [
+                'title' => 'L5 Swagger UI V1',
+            ],
+
+            'routes' => [
+                /*
+                 * Route for accessing api documentation interface
+                */
+                'api' => 'api/v1/documentation',
+
+                'docs' => 'docs-v1',
+
+                'oauth2_callback' => 'api/oauth2-callback-v1'
+            ],
+            'paths' => [
+                /*
+                 * File name of the generated json documentation file
+                */
+                'docs_json' => 'api-docs-v1.json',
+
+                /*
+                 * File name of the generated YAML documentation file
+                */
+                'docs_yaml' => 'api-docs-v1.yaml',
 
                 /*
                  * Absolute paths to directory containing the swagger annotations are stored.
                 */
                 'annotations' => [
-                    base_path('app'),
+                    base_path('Modules/Api/Http/Controllers/V1'),
+                    base_path('Modules/Api/Http/Requests/V1'),
+                    base_path('Modules/Api/Transformers/V1'),
                 ],
 
             ],
@@ -107,7 +141,6 @@ return [
                     'in' => 'header', // The location of the API key. Valid values are "query" or "header".
                     'scheme' => 'bearer'
                 ],
-
                 /*
                  * Examples of Security schemes
                 */
@@ -204,8 +237,8 @@ return [
         /*
          * Uncomment to add constants which can be used in annotations
          */
-        // 'constants' => [
-        // 'L5_SWAGGER_CONST_HOST' => env('L5_SWAGGER_CONST_HOST', 'http://my-default-host.com'),
-        // ],
+        'constants' => [
+            'L5_SWAGGER_CONST_HOST' => env('L5_SWAGGER_CONST_HOST', env('APP_URL') . '/api'),
+        ],
     ],
 ];
