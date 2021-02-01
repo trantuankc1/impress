@@ -1,8 +1,6 @@
 @extends('admin::dashboard.base')
 
-@section('title')
-    <title>Tomosia</title>
-@endsection
+@section('title', 'Tomosia')
 
 @section('content')
     <h1>Hello World</h1>

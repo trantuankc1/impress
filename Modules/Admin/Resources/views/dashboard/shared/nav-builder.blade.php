@@ -6,13 +6,13 @@
     <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="">
             <i class="cil-house c-sidebar-nav-icon"></i>
-            Quản lý mẫu nhà
+            Apartment
         </a>
     </li>
     <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="">
             <i class="cil-contact c-sidebar-nav-icon"></i>
-            Liên hệ
+            Contact
         </a>
     </li>
 </ul>

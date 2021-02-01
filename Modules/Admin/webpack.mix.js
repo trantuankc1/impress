@@ -18,7 +18,7 @@ mix.js(__dirname + '/Resources/assets/js/app.js', 'js/admin.js')
     .js('node_modules/@coreui/utils/dist/coreui-utils.js', 'js/coreui-utils.js');
 
 mix.sass(__dirname + '/Resources/assets/sass/app.scss', 'css/admin.css')
-    .sass(__dirname + '/Resources/assets/sass/style.scss', 'css/style.css');
+    .sass(__dirname + '/Resources/assets/sass/coreui/style.scss', 'css/style.css');
 
 if (mix.inProduction()) {
     mix.version();
