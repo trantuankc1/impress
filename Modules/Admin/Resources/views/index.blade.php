@@ -1,4 +1,6 @@
-@extends('admin::layouts.master')
+@extends('admin::dashboard.base')
+
+@section('title', 'Tomosia')
 
 @section('content')
     <h1>Hello World</h1>
