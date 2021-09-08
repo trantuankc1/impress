@@ -2,8 +2,8 @@
 
 namespace Modules\Api\Repositories\Mysql;
 
+use App\Models\User;
 use Modules\Api\Contracts\Repositories\Mysql\UserRepository;
-use Modules\Api\Entities\User;
 
 class UserRepoImpl implements UserRepository
 {
@@ -24,10 +24,11 @@ class UserRepoImpl implements UserRepository
      * Get User by id
      *
      * @param int $userId
-     * @return User|null|object
+     * @return User|null
      */
     public function findById(int $userId): ?User
     {
+        /** @noinspection PhpIncompatibleReturnTypeInspection */
         return User::query()
             ->find($userId);
     }

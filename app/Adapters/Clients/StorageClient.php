@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Api\Contracts\Clients;
+namespace App\Adapters\Clients;
 
 /**
  * Represents methods interacting with the StorageClient service.

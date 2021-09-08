@@ -2,7 +2,7 @@
 
 namespace Modules\Api\Contracts\Repositories\Mysql;
 
-use Modules\Api\Entities\User;
+use App\Models\User;
 
 interface UserRepository
 {
@@ -18,7 +18,7 @@ interface UserRepository
      * Get User by id
      *
      * @param int $userId
-     * @return User|null|object
+     * @return User|null
      */
     public function findById(int $userId): ?User;
 }

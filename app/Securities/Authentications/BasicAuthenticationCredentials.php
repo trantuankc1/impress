@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Api\Securities\Authentications;
+namespace App\Securities\Authentications;
 
 class BasicAuthenticationCredentials
 {

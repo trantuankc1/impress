@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Api\Contracts\Securities;
+namespace App\Securities\Authentications;
 
 interface AuthenticationManager
 {

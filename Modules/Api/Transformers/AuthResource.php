@@ -3,6 +3,7 @@
 namespace Modules\Api\Transformers;
 
 use Illuminate\Http\Request;
+use App\Transformers\SuccessResource;
 
 /**
  * @OA\Schema(

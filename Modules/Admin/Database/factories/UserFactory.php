@@ -25,8 +25,8 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => Str::random('10'),
-            'email' => Str::random('20') . '@test.com',
+            'name' => Str::random(10),
+            'email' => Str::random(20) . '@test.com',
             'password' => Hash::make('12345678'),
             'status' => UserStatus::ACTIVE,
             'email_verified_at' =>  Carbon::now()
