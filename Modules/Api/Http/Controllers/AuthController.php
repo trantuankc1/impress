@@ -6,7 +6,7 @@ use Modules\Api\Contracts\Services\AuthService;
 use Modules\Api\Http\Requests\AuthLoginRequest;
 use Modules\Api\Repositories\Parameters\AuthLoginParam;
 use Modules\Api\Transformers\AuthResource;
-use Modules\Api\Transformers\SuccessResource;
+use App\Transformers\SuccessResource;
 
 class AuthController extends BaseController
 {

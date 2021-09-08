@@ -2,15 +2,15 @@
 
 namespace Modules\Api\Providers;
 
+use App\Adapters\Clients\StorageClient;
+use App\Adapters\Clients\StorageClientImpl;
+use App\Securities\Authentications\AuthenticationManager;
+use App\Securities\Authentications\BasicAuthenticationManager;
 use Illuminate\Support\ServiceProvider;
-use Modules\Api\Contracts\Securities\AuthenticationManager;
 use Modules\Api\Contracts\Services\AuthService;
 use Modules\Api\Contracts\Services\UserService;
-use Modules\Api\Contracts\Clients\StorageClient;
-use Modules\Api\Securities\Authentications\BasicAuthenticationManager;
 use Modules\Api\Services\AuthServiceImpl;
 use Modules\Api\Services\UserServiceImpl;
-use Modules\Api\Clients\StorageClientImpl;
 
 class BootstrapServiceProvider extends ServiceProvider
 {

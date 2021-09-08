@@ -1,11 +1,15 @@
 <?php
 
-namespace Modules\Api\Clients;
+namespace App\Adapters\Clients;
 
 use App\Exceptions\ApiException;
 use Carbon\Carbon;
+use Exception;
+use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use Modules\Api\Contracts\Clients\StorageClient;
+use Illuminate\Support\Str;
+use RuntimeException;
 
 /**
  * Represents methods interacting with the StorageClient service.
@@ -13,9 +17,9 @@ use Modules\Api\Contracts\Clients\StorageClient;
 class StorageClientImpl implements StorageClient
 {
     /**
-     * @var StorageClient
+     * @var Filesystem
      */
-    private $storageClient;
+    private Filesystem $storageClient;
 
     /**
      * StorageClientImpl constructor.
@@ -29,7 +33,7 @@ class StorageClientImpl implements StorageClient
      * Set config StorageClient.
      *
      * @param string $disk Filesystem disk.
-     * @return ApiException|void
+     * @return void
      */
     private function setStorageClient(string $disk): void
     {
@@ -97,11 +101,16 @@ class StorageClientImpl implements StorageClient
             $dataInfo['path'] = $path;
             $dataInfo['name'] = $this->getFileName($file, $isRename);
             $key = $this->generateFileName($path, $dataInfo['name']);
-            $this->storageClient->put($key, file_get_contents($file), 'public');
+            $fileContent = file_get_contents($file);
+            if (!$fileContent) {
+                throw new RuntimeException('The file is invalid.');
+            }
+
+            $this->storageClient->put($key, $fileContent, 'public');
 
             return $dataInfo;
-        } catch (\Exception $e) {
-            \Log::error('[ERROR_UPLOAD_FILE] =>' . $e->getMessage());
+        } catch (Exception $e) {
+            Log::error('[ERROR_UPLOAD_FILE] =>' . $e->getMessage());
 
             return [];
         }//end try
@@ -118,9 +127,9 @@ class StorageClientImpl implements StorageClient
     {
         $fileName = $file->getClientOriginalName();
         if ($isRename) {
-            $fileName = encryptFileName(randomString(), $file->getClientOriginalExtension());
+            $fileName = sprintf('%s.%s', Str::uuid(), $file->getClientOriginalExtension());
         }
-        
+
         return $fileName;
     }
 
@@ -137,7 +146,7 @@ class StorageClientImpl implements StorageClient
         if ($imageSize) {
             $size = $imageSize[0] . 'x' . $imageSize[1];
         }
-        
+
         return [
             'size' => $size,
             'type' => $file->getClientOriginalExtension()

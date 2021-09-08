@@ -1,12 +1,13 @@
 <?php
-namespace Modules\Api\Database\factories;
 
+namespace Database\Factories;
+
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Modules\Api\Constants\UserStatus;
-use Modules\Api\Entities\User;
 
 class UserFactory extends Factory
 {
@@ -25,12 +26,11 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => Str::random('10'),
-            'email' => Str::random('20') . '@test.com',
+            'name' => Str::random(10),
+            'email' => Str::random(20) . '@test.com',
             'password' => Hash::make('12345678'),
             'status' => UserStatus::ACTIVE,
             'email_verified_at' =>  Carbon::now()
         ];
     }
 }
-

@@ -1,8 +1,7 @@
 <?php
 
-namespace Modules\Api\Securities\Authentications;
+namespace App\Securities\Authentications;
 
-use Modules\Api\Contracts\Securities\Authentication;
 use Modules\Api\Repositories\Auth;
 
 class BasicAuthentication implements Authentication

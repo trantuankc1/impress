@@ -1,14 +1,12 @@
 <?php
 
-namespace Modules\Api\Securities\Authentications;
+namespace App\Securities\Authentications;
 
 use App\Exceptions\ApiException;
 use App\Securities\Exceptions\AuthenticationException;
 use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\StatefulGuard;
-use Modules\Api\Contracts\Securities\AuthenticationManager;
-use Modules\Api\Contracts\Securities\Authentication;
 use Modules\Api\Repositories\Auth;
 
 class BasicAuthenticationManager implements AuthenticationManager
