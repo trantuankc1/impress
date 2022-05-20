@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index');
+    Route::resource('products', ProductController::class);
 });
+

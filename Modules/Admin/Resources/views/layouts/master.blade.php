@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Module Admin</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    @include('admin::layouts.css')
+</head>
+<body class="">
+<div class="wrapper">
 
-       {{-- Laravel Mix - CSS File --}}
-       {{-- <link rel="stylesheet" href="{{ mix('css/admin.css') }}"> --}}
 
-    </head>
-    <body>
-        @yield('content')
+    <!-- Navbar -->
+    @include('admin::layouts.nav')
+    <!-- /.navbar -->
 
-        {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/admin.js') }}"></script> --}}
-    </body>
+    <!-- Main Sidebar Container -->
+    @include('admin::layouts.sibar')
+
+    <!-- Content Wrapper. Contains page content -->
+    @yield('content')
+
+
+</div>
+@include('admin::layouts.script')
+</body>
 </html>
