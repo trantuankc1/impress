@@ -2,12 +2,11 @@
 
 namespace Modules\Admin\Contracts\Services;
 
-use App\Models\Products;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 interface ProductService
 {
-    public function create(Request $request);
+    public function save(Request $request);
 
     public function edit();
 

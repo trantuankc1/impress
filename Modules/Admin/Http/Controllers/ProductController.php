@@ -3,14 +3,18 @@
 namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Contracts\Services\ProductService;
+use Modules\Admin\Http\Requests\StorePostRequest;
 
 class ProductController extends Controller
 {
-    public function __construct()
+    protected ProductService $productService;
+    public function __construct(ProductService $productService)
     {
-
+        $this->productService = $productService;
     }
     /**
      * Display a listing of the resource.
@@ -33,11 +37,13 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      * @param Request $request
-     * @return Renderable
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
+      $product = $this->productService->save($request);
 
+      return redirect()->route('products.index');
     }
 
     /**

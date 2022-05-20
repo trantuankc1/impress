@@ -6,12 +6,15 @@ use App\Models\Products;
 use http\Env\Request;
 use Modules\Admin\Contracts\Repositories\Mysql\ProductRepository;
 
+
+
 class ProductRepoImpl implements ProductRepository
 {
 
-    public function create(Products $product)
+    public function save(Products $product)
     {
         $product->save();
+
         return $product;
     }
 

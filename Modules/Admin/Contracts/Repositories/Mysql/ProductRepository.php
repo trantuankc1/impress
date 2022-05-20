@@ -7,7 +7,7 @@ use http\Env\Request;
 
 interface ProductRepository
 {
-    public function create(Products $product);
+    public function save(Products $product);
 
     public function edit();
 

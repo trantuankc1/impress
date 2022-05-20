@@ -3,23 +3,28 @@
 namespace Modules\Admin\Services;
 
 use App\Models\Products;
-use http\Env\Request;
+use App\Product;
+use Illuminate\Http\Request;
 use Modules\Admin\Contracts\Repositories\Mysql\ProductRepository;
 use Modules\Admin\Contracts\Services\ProductService;
 
 class ProductServiceImpl implements ProductService
 {
-    private ProductRepository $productRepository;
+    protected ProductRepository $productRepository;
     public function __construct(ProductRepository $productRepository)
     {
         $this->productRepository = $productRepository;
     }
 
-    public function create(Request $request)
+    public function save(Request $request)
     {
         $product = new Products();
-        $product->name_product = $request->get('name_product');
-        dd();
+        $product->name = $request->get('name');
+        $product->price = $request->get('price');
+        $product->content = $request->get('content');
+        $product->description = $request->get('description');
+
+        return $this->productRepository->save($product);
     }
 
     public function edit()
