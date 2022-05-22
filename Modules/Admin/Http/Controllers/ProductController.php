@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -22,14 +23,17 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('admin::index');
+        $data = $this->productService->getAllProduct();
+        return view('admin::product.all_product', [
+            'data' => $data
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      * @return Renderable
      */
-    public function create()
+    public function create(): Renderable
     {
         return view('admin::product.add_product');
     }
@@ -84,6 +88,6 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->productService->destroy($id);
     }
 }

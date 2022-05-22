@@ -15,7 +15,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    @include('admin::layouts.sibar')
+    @include('admin::layouts.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     @yield('content')

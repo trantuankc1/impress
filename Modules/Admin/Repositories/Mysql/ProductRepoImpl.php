@@ -6,8 +6,6 @@ use App\Models\Products;
 use http\Env\Request;
 use Modules\Admin\Contracts\Repositories\Mysql\ProductRepository;
 
-
-
 class ProductRepoImpl implements ProductRepository
 {
 
@@ -33,8 +31,13 @@ class ProductRepoImpl implements ProductRepository
         // TODO: Implement update() method.
     }
 
-    public function destroy()
+    public function destroy(Products $products)
     {
-        // TODO: Implement destroy() method.
+        return $products->delete();
+    }
+
+    public function getAllProduct()
+    {
+       return Products::paginate(5);
     }
 }

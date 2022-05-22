@@ -14,5 +14,7 @@ interface ProductService
 
     public function update();
 
-    public function destroy();
+    public function destroy(int $id);
+
+    public function getAllProduct();
 }

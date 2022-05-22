@@ -3,7 +3,6 @@
 namespace Modules\Admin\Services;
 
 use App\Models\Products;
-use App\Product;
 use Illuminate\Http\Request;
 use Modules\Admin\Contracts\Repositories\Mysql\ProductRepository;
 use Modules\Admin\Contracts\Services\ProductService;
@@ -11,6 +10,7 @@ use Modules\Admin\Contracts\Services\ProductService;
 class ProductServiceImpl implements ProductService
 {
     protected ProductRepository $productRepository;
+
     public function __construct(ProductRepository $productRepository)
     {
         $this->productRepository = $productRepository;
@@ -23,6 +23,7 @@ class ProductServiceImpl implements ProductService
         $product->price = $request->get('price');
         $product->content = $request->get('content');
         $product->description = $request->get('description');
+        $product->image = $request->file('image')->store('image');
 
         return $this->productRepository->save($product);
     }
@@ -42,8 +43,13 @@ class ProductServiceImpl implements ProductService
         // TODO: Implement update() method.
     }
 
-    public function destroy()
+    public function destroy(int $id)
     {
-        // TODO: Implement destroy() method.
+        $product = $this->productRepository;
+    }
+
+    public function getAllProduct()
+    {
+        return $this->productRepository->getAllProduct();
     }
 }

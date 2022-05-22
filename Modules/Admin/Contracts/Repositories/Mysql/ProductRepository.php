@@ -15,6 +15,8 @@ interface ProductRepository
 
     public function update();
 
-    public function destroy();
+    public function destroy(Products $products);
+
+    public function getAllProduct();
 
 }
