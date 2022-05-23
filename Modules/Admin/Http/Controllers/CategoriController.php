@@ -14,7 +14,7 @@ class CategoriController extends Controller
      */
     public function index()
     {
-        return view('admin::index');
+        return view('admin::categori.home');
     }
 
     /**
@@ -23,7 +23,7 @@ class CategoriController extends Controller
      */
     public function create()
     {
-        return view('admin::create');
+        return view('admin::categori.addCategori');
     }
 
     /**
