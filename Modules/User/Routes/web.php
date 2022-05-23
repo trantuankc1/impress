@@ -25,7 +25,7 @@ Route::get('/about', [UserController::class, 'aboutUs'])->name('user.aboutUs');
 
 Route::get('/project', [UserController::class, 'project'])->name('user.project');
 
-Route::get('/product', [UserController::class, 'ourProduct'])->name('user.ourProduct');
+Route::get('/product', [UserController::class, 'outProduct'])->name('user.ourProduct');
 
 Route::get('/detail', [UserController::class, 'detailProduct'])->name('user.detailProduct');
 

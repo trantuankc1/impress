@@ -6,18 +6,26 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\User\Contracts\Services\UserService;
+use App\Models\Products;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
+
     public function index()
     {
-        return view('user::users.home');
+        $data = Products::query()->get();
+        return view('user::users.home', [
+            'data' => $data
+        ]);
+    }
+    public function outProduct()
+    {
+        $data = Products::query()->get();
+        return view('user::users.ourProduct', [
+            'data' => $data
+        ]);
     }
 
     /**

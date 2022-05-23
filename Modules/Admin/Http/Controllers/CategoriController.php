@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Fronend\Http\Controllers;
+namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class FronendController extends Controller
+class CategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class FronendController extends Controller
      */
     public function index()
     {
-        return view('fronend::index');
+        return view('admin::index');
     }
 
     /**
@@ -23,7 +23,7 @@ class FronendController extends Controller
      */
     public function create()
     {
-        return view('fronend::create');
+        return view('admin::create');
     }
 
     /**
@@ -43,7 +43,7 @@ class FronendController extends Controller
      */
     public function show($id)
     {
-        return view('fronend::show');
+        return view('admin::show');
     }
 
     /**
@@ -53,7 +53,7 @@ class FronendController extends Controller
      */
     public function edit($id)
     {
-        return view('fronend::edit');
+        return view('admin::edit');
     }
 
     /**

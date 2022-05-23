@@ -17,6 +17,7 @@ class Products extends Model
         'price',
         'content',
         'description',
+        'image'
     ];
 
     use HasFactory;
