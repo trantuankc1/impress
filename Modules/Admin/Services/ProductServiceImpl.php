@@ -11,11 +11,18 @@ class ProductServiceImpl implements ProductService
 {
     protected ProductRepository $productRepository;
 
+    /**
+     * @param ProductRepository $productRepository
+     */
     public function __construct(ProductRepository $productRepository)
     {
         $this->productRepository = $productRepository;
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function save(Request $request)
     {
         $product = new Products();
@@ -28,9 +35,9 @@ class ProductServiceImpl implements ProductService
         return $this->productRepository->save($product);
     }
 
-    public function edit()
+    public function edit(int $id)
     {
-        // TODO: Implement edit() method.
+        return $this->productRepository->findById($id);
     }
 
     public function store()
@@ -38,15 +45,23 @@ class ProductServiceImpl implements ProductService
         // TODO: Implement store() method.
     }
 
-    public function update()
+    public function update(Request $request, int $id)
     {
-        // TODO: Implement update() method.
+        $product = $this->productRepository->findById($id);
+        $product->name = $request->get('name');
+        $product->price = $request->get('price');
+        $product->content = $request->get('content');
+        $product->description = $request->get('description');
+        $product->image = $request->file('image')->store('image');
+
+        return $this->productRepository->update($product, $id);
     }
 
     public function destroy(int $id)
     {
-        $product = $this->productRepository;
+        return $this->productRepository->destroy($id);
     }
+
 
     public function getAllProduct()
     {

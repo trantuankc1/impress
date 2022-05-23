@@ -30,22 +30,34 @@
                                 <label for="exampleInputEmail1">Tên Sản Phẩm</label>
                                 <input type="text" name='name' class="form-control" id="exampleInputEmail1"
                                        placeholder="tên sản phẩm">
+                                @error('name')
+                                <span>{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Giá Sản Phẩm</label>
                                 <input type="text" class="form-control" name="price" id="exampleInputPassword1"
                                        placeholder="giá sản phẩm">
+                                @error('price')
+                                <span>{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Thông Tin</label>
                                 <input type="text" name="content" class="form-control" id="exampleInputEmail1"
                                        placeholder="Thông tin  sản phẩm">
+                                @error('content')
+                                <span>{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Mô Tả Sản Phẩm</label>
                                 <textarea type="text" name="description" class="form-control" id="exampleInputEmail1"
                                           placeholder="mô tả sản phẩm">
                               </textarea>
+                                @error('description')
+                                <span>{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputFile">Ảnh Sản Phẩm</label>

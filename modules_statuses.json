@@ -1,5 +1,6 @@
 {
     "Api": true,
     "Admin": true,
-    "Fronend": true
+    "Fronend": true,
+    "UserController": true
 }

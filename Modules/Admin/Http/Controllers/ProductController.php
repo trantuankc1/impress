@@ -2,10 +2,8 @@
 
 namespace Modules\Admin\Http\Controllers;
 
-use App\Models\Products;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Admin\Contracts\Services\ProductService;
 use Modules\Admin\Http\Requests\StorePostRequest;
@@ -21,10 +19,10 @@ class ProductController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function index(): Renderable
     {
         $data = $this->productService->getAllProduct();
-        return view('admin::product.all_product', [
+        return view('admin::product.allProduct', [
             'data' => $data
         ]);
     }
@@ -35,15 +33,15 @@ class ProductController extends Controller
      */
     public function create(): Renderable
     {
-        return view('admin::product.add_product');
+        return view('admin::product.addProduct');
     }
 
     /**
      * Store a newly created resource in storage.
-     * @param Request $request
+     * @param StorePostRequest $request
      * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request): RedirectResponse
     {
       $product = $this->productService->save($request);
 
@@ -55,9 +53,9 @@ class ProductController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show($id)
+    public function show(int $id): Renderable
     {
-        return view('admin::show');
+        return $this->productService->edit();
     }
 
     /**
@@ -65,29 +63,34 @@ class ProductController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function edit($id)
+    public function edit(int $id): Renderable
     {
-        return view('admin::product.edit');
+        $product = $this->productService->edit($id);
+        return view('admin::product.editProduct', compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
-     * @param Request $request
+     * @param StorePostRequest $request
      * @param int $id
-     * @return Renderable
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(StorePostRequest $request, int $id): RedirectResponse
     {
-        //
+       $this->productService->update($request, $id);
+
+       return redirect()->route('products.index');
     }
 
     /**
      * Remove the specified resource from storage.
      * @param int $id
-     * @return Renderable
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(int $id): RedirectResponse
     {
-        return $this->productService->destroy($id);
+       $this->productService->destroy($id);
+
+       return redirect()->route('products.index');
     }
 }

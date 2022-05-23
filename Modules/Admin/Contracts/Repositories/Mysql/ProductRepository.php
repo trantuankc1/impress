@@ -3,19 +3,20 @@
 namespace Modules\Admin\Contracts\Repositories\Mysql;
 
 use App\Models\Products;
-use http\Env\Request;
 
 interface ProductRepository
 {
+    public function findById(int $id);
+
     public function save(Products $product);
 
-    public function edit();
+    public function edit(int $id);
 
     public function store();
 
-    public function update();
+    public function update(Products $products);
 
-    public function destroy(Products $products);
+    public function destroy(int $id);
 
     public function getAllProduct();
 

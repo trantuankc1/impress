@@ -9,6 +9,7 @@ use Modules\Admin\Contracts\Repositories\Mysql\ProductRepository;
 class ProductRepoImpl implements ProductRepository
 {
 
+
     public function save(Products $product)
     {
         $product->save();
@@ -16,9 +17,9 @@ class ProductRepoImpl implements ProductRepository
         return $product;
     }
 
-    public function edit()
+    public function edit(int $id)
     {
-        // TODO: Implement edit() method.
+        return Products::query()->findOrFail($id);
     }
 
     public function store()
@@ -26,18 +27,25 @@ class ProductRepoImpl implements ProductRepository
         // TODO: Implement store() method.
     }
 
-    public function update()
+    public function update(Products $products)
     {
-        // TODO: Implement update() method.
+        $products->update();
+
+        return $products;
     }
 
-    public function destroy(Products $products)
+    public function destroy(int $id)
     {
-        return $products->delete();
+        return Products::destroy($id);
     }
 
     public function getAllProduct()
     {
-       return Products::paginate(5);
+       return Products::paginate(10);
+    }
+
+    public function findById(int $id)
+    {
+        return Products::query()->findOrFail($id);
     }
 }
