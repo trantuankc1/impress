@@ -2,5 +2,6 @@
     "Api": true,
     "Admin": true,
     "Fronend": true,
-    "UserController": true
+    "UserController": true,
+    "User": true
 }

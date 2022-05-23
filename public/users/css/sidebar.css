@@ -1,0 +1,72 @@
+#content {
+   position: relative;
+}
+
+#content .sidebar{
+    margin-top: 43px;
+}
+
+#content .sidebar .list-group a {
+    display: block;
+    font-size: 15px;
+    color: #575757;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    transition: all 0.1s;
+}
+
+#content .sidebar .list-group a:hover {
+    background-color: #e31d23;
+    color: #ffffff;
+    font-weight: 600;
+    transition: all 0.1s;
+}
+
+#content .sidebar .list-group a::after {
+    padding-top: 4px;
+    float: right;
+    margin-left: 0.25em;
+    vertical-align: middle;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-size: 11px;
+    color: #e41e24;
+}
+
+#content .sidebar .list-group a:hover::after {
+    color: #ffffff;
+}
+
+#content .sidebar .banner {
+    margin-top: 25px;
+    display: block;
+    position: relative;
+}
+
+#content .sidebar .banner > img {
+    width: 100%;
+}
+
+#content .sidebar .banner .view-now {
+    position: absolute;
+    padding: 10px 35px;
+    border-radius: 30px;
+    top: 63%;
+    right: 26%;
+    background: #e51d25;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+#content .sidebar .banner .view-now::after {
+    padding-left: 9px;
+    float: right;
+    vertical-align: middle;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-size: 11px;
+}
+

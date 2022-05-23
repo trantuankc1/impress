@@ -1,0 +1,21 @@
+.justify-content-center {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.justify-content-center .card-header {
+    font-weight: 600;
+}
+
+.justify-content-center .card-body .btn-link {
+    background: #1a202c;
+    color: #ffffff;
+    padding: 5px 30px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.justify-content-center .card-body .btn-link:hover {
+    color: #2999ce;
+}

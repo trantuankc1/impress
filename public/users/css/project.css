@@ -1,0 +1,39 @@
+.project .list-project .project-item {
+    margin-bottom: 15px;
+    margin-top: 50px;
+    transition: all 0.2s;
+}
+
+.project .list-project .project-item:hover {
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+
+.project .list-project .project-item .project-item-head {
+    border: 3px solid #4e555b;
+    padding: 15% 0;
+    margin: 0 10%;
+    position: relative;
+}
+
+.project .list-project .project-item .project-item-head .image-promotion {
+    position: absolute;
+    width: 70px;
+    height: auto;
+    bottom: -7%;
+    left: 36%;
+    background: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.project .list-project .project-item .project-item-head .image-promotion img {
+    padding: 4px 4px 0 4px;
+    background: #1b1e21;
+}
+
+.project .list-project .project-item .project-item-body > p {
+    font-size: 14px;
+    color: #636363;
+    margin: 0px 60px;
+}

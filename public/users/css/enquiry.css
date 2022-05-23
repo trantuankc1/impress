@@ -1,0 +1,159 @@
+.enquiry table {
+    margin-top: 60px;
+}
+
+.enquiry table thead {
+    background: #ebebeb;
+}
+
+.enquiry table thead th {
+    border: 1px solid #cecece;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.enquiry table thead th {
+    border-bottom: none
+}
+
+.enquiry table thead .th-destroy {
+    min-width: 25.9px;
+}
+
+.enquiry table thead .th-product {
+    min-width: 518px;
+}
+
+.enquiry table thead .th-quantity {
+    min-width: 181.3px;
+}
+
+.enquiry table thead .th-unit-price {
+    min-width: 388.5px;
+}
+
+.enquiry table thead .th-total {
+    min-width: 181.3px;
+}
+
+.enquiry .table tbody {
+    border-top: none;
+}
+
+.enquiry .table tbody td {
+    border: 1px solid #cecece;
+}
+
+.enquiry .table tbody tr:first-child > td {
+    border-top: none;
+}
+
+.enquiry .table tbody .td-destroy {
+    position: relative;
+}
+
+.enquiry .table tbody .td-destroy a > i {
+    position: absolute;
+    top: 44%;
+    color: #e02828;
+    font-size: 12px;
+}
+
+
+.enquiry .table tbody .td-product > a {
+    padding: 10px 0 10px 15px;
+    text-decoration: none;
+}
+
+.enquiry .table tbody .td-product .td-product-image {
+    width: 20%;
+    height: auto;
+}
+
+.enquiry .table tbody .td-product .td-product-name {
+    color: #000000;
+    font-size: 14px;
+    padding: 5% 0 0 5%;
+}
+
+.enquiry .table tbody .td-quantity input {
+    text-align: center;
+    padding: 12px 6px 12px 6px;
+    width: 42px;
+    margin-top: 16%;
+    background: #ebebeb;
+    font-size: 12px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
+
+.enquiry .table tbody .td-unit-price {
+    position: relative;
+}
+
+.enquiry .table tbody .td-unit-price span {
+    position: absolute;
+    color: #646464;
+    font-weight: 500;
+    font-size: 14px;
+    top: 40%;
+    right: 43%;
+}
+
+.enquiry .table tbody .td-total {
+    position: relative;
+}
+
+.enquiry .table tbody .td-total span {
+    position: absolute;
+    color: #646464;
+    font-weight: 500;
+    font-size: 14px;
+    top: 40%;
+    right: 35%;
+}
+.form-product-enquiry {
+    background-color: #f7f7f7;
+}
+
+.form-enquiry h2 {
+    color: #222222;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.form-enquiry input {
+    width: 100%;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #b5b5b5;
+    padding-bottom: 12px;
+    background-color: #f7f7f7;
+}
+
+.form-enquiry input.request-detail {
+    padding-bottom: 50px;
+}
+
+.form-enquiry input.btn-enquiry {
+    width: 76%;
+    background: #e51e25;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: none;
+    padding: 14px 0px 10px 0px;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.form-enquiry input::placeholder {
+    font-size: 14px;
+    color: #b5b5b5;
+}
