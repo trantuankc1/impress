@@ -1,0 +1,103 @@
+.product-title h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 35px;
+}
+
+.list-product {
+    margin-top: 20px;
+}
+
+.list-product .product-item {
+    margin-bottom: 25px;
+    transition: all 0.2s;
+}
+
+.list-product .product-item:hover {
+   transform: scale(1.05);
+    transition: all 0.2s;
+}
+
+.list-product .product-item .product-item-images {
+    display: block;
+    background-color: #f5f5f5;
+    padding: 14% 0;
+}
+
+.list-product .product-item .product-item-title a {
+    display: block;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #000000;
+    font-weight: 300;
+}
+
+.list-product .product-item .product-item-price span {
+    font-size: 12px;
+    color: #f5a527;
+}
+
+.list-product .product-item .product-item-buy a {
+    font-size: 12px;
+    background-color: #ebebeb;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 4px 15px;
+}
+
+.list-product .product-item .product-item-buy > a:hover {
+    background-color: #c4c0c0;
+}
+
+.view-all {
+    margin-top: 20px;
+}
+
+.view-all a {
+    padding: 10px 35px 8px 35px;
+    border-radius: 30px;
+    background: #e51d25;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.view-all a::after {
+    margin-left: 9px;
+    vertical-align: middle;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-size: 11px;
+}
+
+.customised-left img {
+    width: 29%;
+    height: 260px;
+    float: left;
+    margin-right: 1%;
+}
+
+.customised-right img {
+    width: 70%;
+    height: 260px;
+    float: right;
+}
+
+.img-fluids {
+    max-width: 100%;
+    height: 150px;
+}
+
+.read-more a {
+    padding: 10px 35px 8px 35px;
+    border-radius: 30px;
+    background: #e51d25;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 10px;
+    text-transform: uppercase;
+}

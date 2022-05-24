@@ -1,0 +1,122 @@
+/*Header*/
+@media only screen and (max-width: 1024px) {
+    #header .header-top .header-service {
+        display: none;
+    }
+
+    #header .header-body .nav__mobile {
+        display: none;
+    }
+
+    #header .header-body .search input {
+        margin-top: 3px;
+        margin-bottom: 2px;
+        padding: 6px 0 6px 5px;
+    }
+
+    #header .header-body .search i {
+        top: 32%;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #header .header-body .icon-menu {
+        display: none;
+    }
+
+    .nav__mobile__responsive {
+        display: none;
+    }
+}
+
+/*Home*/
+@media only screen and (max-width: 1024px) {
+    .list-product .product-item .product-item-images {
+        padding: 7% 0;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .list-product .product-item .product-item-images {
+        padding: 25% 0;
+    }
+}
+
+/*Contact*/
+@media only screen and (max-width: 1024px) {
+    .contact .contact-left {
+        margin-top: 50px;
+    }
+
+    .contact .contact-right {
+        margin-top: 89px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contact .contact-right {
+        margin-top: 20px;
+    }
+}
+
+/*Our Product*/
+@media only screen and (max-width: 1024px) {
+    .detail .image-product img {
+        height: 105%;
+        padding: 43% 0;
+    }
+
+    .detail .image-product {
+        background: #f6f6f6;
+    }
+
+    .detail .product-detail ul.social-network > li > a {
+        text-align: center;
+    }
+
+    .detail .product-detail ul.social-network > li > a > i {
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .detail .image-product img {
+        height: 104%;
+        padding: 18% 0;
+    }
+
+    .detail .image-product {
+        background: #f6f6f6;
+    }
+}
+
+/*About Us*/
+@media only screen and (max-width: 1024px) {
+    .about-us .about-us-left {
+        margin-top: 50px;
+    }
+
+    .about-us .about-us-right img {
+        margin-top: 30px;
+        margin-left: 0px;
+    }
+}
+
+/*Project*/
+@media only screen and (max-width: 768px) {
+    .project .list-project .project-item .project-item-head .image-promotion {
+        left: 37%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .project .list-project .project-item .project-item-head .image-promotion {
+        left: 39%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .project .list-project .project-item .project-item-head .image-promotion {
+        left: 37%;
+    }
+}

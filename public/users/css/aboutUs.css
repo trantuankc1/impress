@@ -1,0 +1,38 @@
+.about-us .about-us-left {
+    margin-top: 100px;
+}
+
+.about-us .about-us-left .about-us-left-content > p {
+    color: #000000;
+    font-size: 14px;
+}
+
+.about-us .about-us-left .about-us-left-reason > h2 {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.about-us .about-us-left .about-us-left-reason > p {
+    color: #000000;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.about-us .about-us-left .about-us-left-reason > p::before {
+    vertical-align: middle;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 9px;
+    padding: 2px 3px;
+    background: #e51e25;
+    color: #ffffff;
+    border-radius: 15px;
+    margin-right: 9px;
+}
+
+.about-us .about-us-right img {
+    margin-top: 123px;
+    margin-left: 100px;
+}
