@@ -2,8 +2,6 @@
 
 namespace Modules\Admin\Contracts\Repositories\Mysql;
 
-use App\Models\Admin;
-
 interface ListAdminRepository
 {
     /**

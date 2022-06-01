@@ -17,7 +17,4 @@ interface OrderRepository
      */
     public function getAllOrder(): LengthAwarePaginator;
 
-
-
-
 }

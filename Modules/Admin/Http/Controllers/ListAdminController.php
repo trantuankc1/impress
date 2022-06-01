@@ -8,8 +8,14 @@ use Modules\Admin\Contracts\Services\ListAdminService;
 
 class ListAdminController extends Controller
 {
+    /**
+     * @var ListAdminService
+     */
     protected ListAdminService $listAdminService;
 
+    /**
+     * @param ListAdminService $listAdminService
+     */
     public function __construct(ListAdminService $listAdminService)
     {
         $this->listAdminService = $listAdminService;
@@ -19,9 +25,10 @@ class ListAdminController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function index(): Renderable
     {
         $list = $this->listAdminService->getAllAdmin();
+
         return view('admin::admin.home', [
             'list' => $list
         ]);

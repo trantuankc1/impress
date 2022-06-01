@@ -2,9 +2,9 @@
 
 namespace Modules\Admin\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
+use Illuminate\View\View;
 use Modules\Admin\Contracts\Services\ContactService;
 
 class ContactController extends Controller
@@ -14,16 +14,18 @@ class ContactController extends Controller
      */
     protected ContactService $contactService;
 
+    /**
+     * @param ContactService $contactService
+     */
     public function __construct(ContactService $contactService)
     {
         $this->contactService = $contactService;
     }
 
     /**
-     * Display a listing of the resource.
-     * @return Renderable
+     * @return View
      */
-    public function index(): Renderable
+    public function index():View
     {
         $contact = $this->contactService->getAllContact();
 

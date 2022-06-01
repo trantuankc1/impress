@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
+use Illuminate\View\View;
 use Modules\Admin\Contracts\Services\ProductService;
 use Modules\Admin\Http\Requests\StorePostRequest;
 
@@ -16,6 +17,9 @@ class ProductController extends Controller
      */
     protected ProductService $productService;
 
+    /**
+     * @param ProductService $productService
+     */
     public function __construct(ProductService $productService)
     {
         $this->productService = $productService;
@@ -23,9 +27,9 @@ class ProductController extends Controller
 
     /**
      * Display a listing of the resource.
-     * @return Renderable
+     * @return View
      */
-    public function index(): Renderable
+    public function index(): View
     {
         $data = $this->productService->getAllProduct();
         return view('admin::product.all', [
@@ -35,9 +39,9 @@ class ProductController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * @return Renderable
+     * @return View
      */
-    public function create(): Renderable
+    public function create(): View
     {
         $category = Category::all();
         return view('admin::product.add')->with(compact('category'));
@@ -58,9 +62,9 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      * @param int $id
-     * @return Renderable
+     * @return View
      */
-    public function edit(int $id): Renderable
+    public function edit(int $id): View
     {
         $product = $this->productService->edit($id);
 

@@ -13,19 +13,14 @@ class OrderDetailServicelmpl implements OrderDetailService
      */
     protected OrderDetailRepository $orderDetailRepository;
 
+    /**
+     * @param OrderDetailRepository $orderDetailRepository
+     */
     public function __construct(OrderDetailRepository $orderDetailRepository)
     {
         $this->orderDetailRepository = $orderDetailRepository;
     }
 
-    /**
-     * @param int $id
-     * @return void
-     */
-    public function destroy(int $id): void
-    {
-        // TODO: Implement destroy() method.
-    }
 
     /**
      * @param int $id

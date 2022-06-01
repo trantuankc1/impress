@@ -17,5 +17,4 @@ interface OrderService
      */
     public function getAllOrder(): LengthAwarePaginator;
 
-
 }

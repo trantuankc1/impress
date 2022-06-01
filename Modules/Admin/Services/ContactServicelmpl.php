@@ -13,6 +13,9 @@ class ContactServicelmpl implements ContactService
      */
     protected ContactRepository $contactRepository;
 
+    /**
+     * @param ContactRepository $contactRepository
+     */
     public function __construct(ContactRepository $contactRepository)
     {
         $this->contactRepository = $contactRepository;
@@ -24,7 +27,11 @@ class ContactServicelmpl implements ContactService
      */
     public function destroy(int $id): void
     {
-        $this->destroy($id);
+        if ($id)
+        {
+            $this->destroy($id);
+        }
+
     }
 
     /**

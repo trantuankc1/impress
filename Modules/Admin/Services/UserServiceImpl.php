@@ -13,6 +13,9 @@ class UserServiceImpl implements UserService
      */
     protected UserRepository $userRepository;
 
+    /**
+     * @param UserRepository $userRepository
+     */
     public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
@@ -32,7 +35,10 @@ class UserServiceImpl implements UserService
      */
     public function destroy(int $id): void
     {
-        $this->userRepository->destroy($id);
-        // TODO: Implement destroy() method.
+        if($id)
+        {
+            $this->userRepository->destroy($id);
+        }
+
     }
 }

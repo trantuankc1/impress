@@ -2,25 +2,28 @@
 
 namespace Modules\Admin\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\View\View;
 use Modules\Admin\Contracts\Services\CategoryService;
 
 class CategoryController extends Controller
 {
     protected CategoryService $categoryService;
 
+    /**
+     * @param CategoryService $categoryService
+     */
     public function __construct(CategoryService $categoryService)
     {
         $this->categoryService = $categoryService;
     }
+
     /**
-     * Display a listing of the resource.
-     * @return Renderable
+     * @return View
      */
-    public function index(): Renderable
+    public function index(): View
     {
         $category = $this->categoryService->getAllCategory();
 
@@ -29,9 +32,9 @@ class CategoryController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * @return Renderable
+     * @return View
      */
-    public function create(): Renderable
+    public function create(): View
     {
         return view('admin::category.add');
     }

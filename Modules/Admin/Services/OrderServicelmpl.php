@@ -2,7 +2,6 @@
 
 namespace Modules\Admin\Services;
 
-use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Modules\Admin\Contracts\Repositories\Mysql\OrderRepository;
 use Modules\Admin\Contracts\Services\OrderService;
@@ -14,6 +13,9 @@ class OrderServicelmpl implements OrderService
      */
     protected OrderRepository  $orderRepository;
 
+    /**
+     * @param OrderRepository $orderRepository
+     */
     public function __construct(OrderRepository  $orderRepository)
     {
         $this->orderRepository = $orderRepository;
@@ -25,7 +27,10 @@ class OrderServicelmpl implements OrderService
      */
     public function destroy(int $id): void
     {
-       $this->orderRepository->destroy($id);
+        if ($id)
+        {
+            $this->orderRepository->destroy($id);
+        }
     }
 
     /**

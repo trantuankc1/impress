@@ -17,6 +17,4 @@ interface ContactRepository
      */
     public function getAllContact(): LengthAwarePaginator;
 
-
-
 }

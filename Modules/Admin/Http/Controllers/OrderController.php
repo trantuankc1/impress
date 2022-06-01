@@ -2,9 +2,9 @@
 
 namespace Modules\Admin\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
+use Illuminate\View\View;
 use Modules\Admin\Contracts\Services\OrderService;
 
 class OrderController extends Controller
@@ -14,15 +14,18 @@ class OrderController extends Controller
      */
     protected OrderService $orderService;
 
+    /**
+     * @param OrderService $orderService
+     */
     public function __construct(OrderService $orderService)
     {
         $this->orderService = $orderService;
     }
 
     /**
-     * @return Renderable
+     * @return View
      */
-    public function index(): Renderable
+    public function index():View
     {
         $order = $this->orderService->getAllOrder();
 
