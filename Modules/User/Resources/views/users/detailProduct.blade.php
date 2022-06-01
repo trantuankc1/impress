@@ -28,20 +28,20 @@
                 <div class="detail">
                     <div class="row">
                         <div class="col-xl-5 col-lg-6 col-md-12 image-product text-center">
-                            <img src="{{ URL::asset('users/images/Layer_141-removebg-preview.png') }}" alt="">
+                            <img src="/storage/{{ $detailProduct->image }} " alt="">
                         </div>
                         <div class="col-xl-7 col-lg-6 col-md-12 product-detail">
                             <div class="title-product-detail">
-                                <h1>iNB106 – Eco Friendly NoteBook</h1>
+                                <h1>{{ $detailProduct->name }}</h1>
                             </div>
                             <div class="content-product-detail mt-4">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. </p>
+                                <p>{{ $detailProduct->content }}</p>
                             </div>
                             <div class="price-product-detail mt-2">
-                                <span>$10.00</span>
+                                <span>{{ number_format($detailProduct->price, 0, '', '.') }} đ</span>
                             </div>
                             <div class="enquiry-now mt-4">
-                                <a class="btn" href="">Enquiry Now</a>
+                                <a class="btn" href="{{ route('user.addCart', $detailProduct->id) }}">Enquiry Now</a>
                             </div>
                             <ul class="social-network d-flex mt-4">
                                 <li class="facebook">
@@ -75,7 +75,7 @@
                                 <h1>Description</h1>
                             </div>
                             <div class="description-content">
-                                <p>Mauris nibh nulla, iaculis vel commodo nec, fermentum ut risus. Duis porttitor accumsan felis, id porta enim faucibus lacinia. Aenean sed augue et sem blandit condimentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin massa nibh, ornare a condimentum eu, malesuada sit amet est. Praesent ac ligula at nisl feugiat dignissim. Nulla id porta dolor. Morbi pretium mattis nulla, nec iaculis nibh pretium ut. Ut et quam enim. Morbi tincidunt turpis at elit tristique feugiat.</p>
+                                <p>{{ $detailProduct->description }}</p>
                             </div>
                         </div>
                     </div>

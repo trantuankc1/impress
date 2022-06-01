@@ -14,10 +14,10 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:10',
-            'price' => 'required|min:6',
-            'content' => 'required|min:10',
-            'description' => 'required|min:10',
+            'name' => 'required|min:5',
+            'price' => 'required|min:5',
+            'content' => 'required|min:5',
+            'description' => 'required|min:5',
         ];
     }
 
@@ -35,10 +35,7 @@ class StorePostRequest extends FormRequest
     {
         return [
             'required' => ':attribute bắt buộc phải nhập',
-            'name' => ':attribute nhập tên sản phẩm ',
-            'price' => ':attribute nhập giá sản phẩm',
-            'content' => ':attribute nhập mô tả',
-            'description' => ':attribute nhập thông tin chi tiết sản phẩm'
+            'min' => ':attribute phải hơn :min ký tự ',
         ];
     }
 

@@ -2,24 +2,46 @@
 
 namespace Modules\Admin\Contracts\Services;
 
-use Cassandra\Collection;
+use App\Models\Category;
+use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 interface ProductService
 {
     /**
      * @param Request $request
-     * @return mixed
+     * @return Products
      */
-    public function save(Request $request);
+    public function save(Request $request): Products;
 
-    public function edit(int $id);
+    /**
+     * @param int $id
+     * @return Products|null
+     */
+    public function edit(int $id): ?Products;
 
-    public function store();
+    /**
+     * @param Request $request
+     * @param int $id
+     * @return Products
+     */
+    public function update(Request $request, int $id): Products;
 
-    public function update(Request $request, int $id);
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function destroy(int $id): void;
 
-    public function destroy(int $id);
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function getAllProduct(): LengthAwarePaginator;
 
-    public function getAllProduct();
+    /**
+     * @param Request $request
+     * @return Category
+     */
+    public function category(Request $request): Category;
 }

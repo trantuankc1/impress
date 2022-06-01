@@ -11,6 +11,9 @@ class SuccessAccount extends Mailable
 {
     use Queueable, SerializesModels;
 
+    /**
+     * @var
+     */
     public $data;
 
     /**
@@ -30,7 +33,7 @@ class SuccessAccount extends Mailable
      */
     public function build()
     {
-        return $this->from('trongtu1006@gmail.com', 'Nguyễn Trọng Tú')
+        return $this->from('trongtu1006@gmail.com', 'Impress.vn')
             ->view('user::users.emails.successAccount')
             ->subject('[Impress.vn] Xác thực tài khoản thành công')
             ->with($this->data);

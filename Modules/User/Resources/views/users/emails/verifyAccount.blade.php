@@ -4,7 +4,7 @@
     <div id=":mo" class="ii gt" jslog="20277; u014N:xr6bB; 4:W251bGwsbnVsbCxbXV0.">
         <div id=":mp" class="a3s aiL ">
             <table width="680" border="0" cellspacing="0" cellpadding="0"
-                   style="background:#f5f5f5;border-top:5px #2292d0 solid;margin:0 auto;border-left:1px solid #ddd;border-right:1px solid #ddd;border-bottom:1px solid #ddd">
+                   style="background:#f5f5f5;border-top:5px #e41e24 solid;margin:0 auto;border-left:1px solid #ddd;border-right:1px solid #ddd;border-bottom:1px solid #ddd">
                 <tbody>
                 <tr>
                     <td><h1 style="font-size:28px;font-weight:normal;text-align:center;padding:25px 0px;margin:0">Kích
@@ -29,7 +29,7 @@
                             <div style="float:left;width:100%;text-align:center">
                                 <p style="padding:20px 0;margin:0"></p>
                                 <a href="{{route('user.verifyAccount', $id)}}"
-                                   style="color:#fff;font-size:14px;text-decoration:none;background:#2292d0;border-radius:5px;padding:10px 25px"
+                                   style="color:#fff;font-size:14px;text-decoration:none;background:#e41e24;border-radius:5px;padding:10px 25px"
                                    target="_blank" data-saferedirecturl="">Kích hoạt ngay</a>
                             </div>
                         </div>

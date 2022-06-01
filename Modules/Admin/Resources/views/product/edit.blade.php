@@ -61,6 +61,7 @@
                             <span>{{ $message }}</span>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="exampleInputFile">Ảnh Sản Phẩm</label>
                             <div class="input-group">
@@ -85,4 +86,17 @@
 
     </div>
 
+@endsection
+
+@section('scripts')
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2({
+                multiple: "multiple",
+            });
+        });
+    </script>
 @endsection

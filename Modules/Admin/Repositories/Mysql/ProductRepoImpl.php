@@ -2,50 +2,71 @@
 
 namespace Modules\Admin\Repositories\Mysql;
 
+use App\Models\Category;
 use App\Models\Products;
-use http\Env\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Modules\Admin\Contracts\Repositories\Mysql\ProductRepository;
 
 class ProductRepoImpl implements ProductRepository
 {
 
-
-    public function save(Products $product)
+    /**
+     * @param Products $product
+     * @return Products
+     */
+    public function save(Products $product): Products
     {
         $product->save();
 
         return $product;
     }
 
-    public function edit(int $id)
-    {
-        return Products::query()->findOrFail($id);
-    }
-
-    public function store()
-    {
-        // TODO: Implement store() method.
-    }
-
-    public function update(Products $products)
+    /**
+     * @param Products $products
+     * @return Products
+     */
+    public function update(Products $products): Products
     {
         $products->update();
 
         return $products;
     }
 
-    public function destroy(int $id)
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function destroy(int $id): void
     {
-        return Products::destroy($id);
+        Products::destroy($id);
     }
 
-    public function getAllProduct()
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function getAllProduct(): LengthAwarePaginator
     {
        return Products::paginate(10);
     }
 
-    public function findById(int $id)
+    /**
+     * @param int $id
+     * @return Products|null
+     */
+    public function findById(int $id): ?Products
     {
         return Products::query()->findOrFail($id);
     }
+
+    /**
+     * @param Category $category
+     * @return Category
+     */
+    public function category(Category $category): Category
+    {
+        $category->save();
+
+        return $category;
+    }
+
 }

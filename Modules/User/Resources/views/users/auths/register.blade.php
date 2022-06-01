@@ -43,7 +43,7 @@
                             <input type="submit" value="Register">
                         </form>
                         <div class="home text-center">
-                            <a href="{{route('user.index')}}">Quay lại trang chủ</a>
+                            <a href="{{route('user.home')}}">Quay lại trang chủ</a>
                         </div>
                     </div>
                 </div>

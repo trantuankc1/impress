@@ -11,7 +11,9 @@ class MailCheckAccount extends Mailable
 {
     use Queueable, SerializesModels;
 
-
+    /**
+     * @var
+     */
     public $data;
 
     /**
@@ -31,7 +33,7 @@ class MailCheckAccount extends Mailable
      */
     public function build()
     {
-        return $this->from('trongtu1006@gmail.com', 'Nguyễn Trọng Tú')
+        return $this->from('trongtu1006@gmail.com', 'Impress.vn')
             ->view('user::users.emails.verifyAccount')
             ->subject('[Impress.vn] Xác thực tài khoản')
             ->with($this->data);

@@ -79,8 +79,8 @@
 .enquiry .table tbody .td-quantity input {
     text-align: center;
     padding: 12px 6px 12px 6px;
-    width: 42px;
-    margin-top: 16%;
+    width: 60px;
+    margin-top: 22%;
     background: #ebebeb;
     font-size: 12px;
     outline: none;
@@ -88,30 +88,20 @@
     border-radius: 3px;
 }
 
-.enquiry .table tbody .td-unit-price {
-    position: relative;
-}
-
 .enquiry .table tbody .td-unit-price span {
-    position: absolute;
     color: #646464;
     font-weight: 500;
     font-size: 14px;
-    top: 40%;
-    right: 43%;
-}
-
-.enquiry .table tbody .td-total {
-    position: relative;
+    padding-top: 12%;
+    display: block;
 }
 
 .enquiry .table tbody .td-total span {
-    position: absolute;
     color: #646464;
     font-weight: 500;
     font-size: 14px;
-    top: 40%;
-    right: 35%;
+    padding-top: 27%;
+    display: block;
 }
 .form-product-enquiry {
     background-color: #f7f7f7;

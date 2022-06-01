@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
@@ -10,11 +11,16 @@ use Modules\Admin\Http\Requests\StorePostRequest;
 
 class ProductController extends Controller
 {
+    /**
+     * @var ProductService
+     */
     protected ProductService $productService;
+
     public function __construct(ProductService $productService)
     {
         $this->productService = $productService;
     }
+
     /**
      * Display a listing of the resource.
      * @return Renderable
@@ -22,7 +28,7 @@ class ProductController extends Controller
     public function index(): Renderable
     {
         $data = $this->productService->getAllProduct();
-        return view('admin::product.allProduct', [
+        return view('admin::product.all', [
             'data' => $data
         ]);
     }
@@ -33,7 +39,8 @@ class ProductController extends Controller
      */
     public function create(): Renderable
     {
-        return view('admin::product.addProduct');
+        $category = Category::all();
+        return view('admin::product.add')->with(compact('category'));
     }
 
     /**
@@ -43,19 +50,9 @@ class ProductController extends Controller
      */
     public function store(StorePostRequest $request): RedirectResponse
     {
-      $product = $this->productService->save($request);
+       $this->productService->save($request);
 
       return redirect()->route('products.index');
-    }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show(int $id): Renderable
-    {
-        return $this->productService->edit();
     }
 
     /**
@@ -66,7 +63,8 @@ class ProductController extends Controller
     public function edit(int $id): Renderable
     {
         $product = $this->productService->edit($id);
-        return view('admin::product.editProduct', compact('product'));
+
+        return view('admin::product.edit', compact('product'));
     }
 
     /**

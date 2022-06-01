@@ -2,22 +2,29 @@
 
 namespace Modules\Admin\Contracts\Repositories\Mysql;
 
-use App\Models\Products;
+use App\Models\Category;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 interface CategoryRepository
 {
-    public function findById(int $id);
 
-    public function save(Products $product);
+    /**
+     * @param Category $category
+     * @return Category
+     */
+    public function save(Category $category): Category;
 
-    public function edit(int $id);
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function destroy(int $id): void;
 
-    public function store();
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function getAllCategory(): LengthAwarePaginator;
 
-    public function update(Products $products);
 
-    public function destroy(int $id);
-
-    public function getAllCategory();
 
 }

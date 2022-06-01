@@ -2,24 +2,26 @@
 
 namespace Modules\Admin\Contracts\Services;
 
-use Cassandra\Collection;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 interface CategoryService
 {
     /**
      * @param Request $request
-     * @return mixed
+     * @return Category
      */
-    public function save(Request $request);
+    public function save(Request $request): Category;
 
-    public function edit(int $id);
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function destroy(int $id): void;
 
-    public function store();
-
-    public function update(Request $request, int $id);
-
-    public function destroy(int $id);
-
-    public function getAllProduct();
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function getAllCategory(): LengthAwarePaginator;
 }

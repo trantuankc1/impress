@@ -37,7 +37,7 @@ class AuthServiceImpl implements AuthService
      * @param LoginUserRequest $request
      * @return Application|Factory|View|RedirectResponse
      */
-    public function login(LoginUserRequest $request): RedirectResponse
+    public function login(LoginUserRequest $request)
     {
         $credentials = $request->only(['email', 'password']);
         if (Auth::attempt($credentials)) {
@@ -47,7 +47,7 @@ class AuthServiceImpl implements AuthService
 
                 return view('user::users.auths.verify', compact('idUser'));
             }
-            return redirect()->route('user.index');
+            return redirect()->route('user.home');
         } else {
             return redirect()->back()->withInput();
         }
@@ -115,7 +115,7 @@ class AuthServiceImpl implements AuthService
         ];
         Mail::to($user->email)->send(new SuccessAccount($data));
 
-        return redirect()->route('user.login');
+        return redirect('https://mail.google.com/');
 //         TODO: Implement verifyAccount() method.
     }
 }

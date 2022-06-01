@@ -36,15 +36,8 @@
                             @csrf
                             <input type="submit" value="Login">
                         </form>
-                        <div class="header-left-top">
-                            <div class="sign-up"><h2>or</h2></div>
-                        </div>
-                        <div class="header-social wthree">
-                            <a href="#" class="face"><h5>Facebook</h5></a>
-                            <a href="#" class="twitt"><h5>Twitter</h5></a>
-                        </div>
                         <div class="home text-center">
-                            <a href="{{route('user.index')}}">Quay lại trang chủ</a>
+                            <a href="{{route('user.home')}}">Quay lại trang chủ</a>
                         </div>
                     </div>
                 </div>

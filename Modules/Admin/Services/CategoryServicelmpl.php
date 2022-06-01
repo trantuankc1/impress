@@ -3,12 +3,10 @@
 namespace Modules\Admin\Services;
 
 use App\Models\Category;
-use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Modules\Admin\Contracts\Repositories\Mysql\CategoryRepository;
-use Modules\Admin\Contracts\Repositories\Mysql\ProductRepository;
 use Modules\Admin\Contracts\Services\CategoryService;
-use Modules\Admin\Contracts\Services\ProductService;
 
 class CategoryServicelmpl implements CategoryService
 {
@@ -24,47 +22,30 @@ class CategoryServicelmpl implements CategoryService
 
     /**
      * @param Request $request
-     * @return mixed
+     * @return Category
      */
-    public function save(Request $request)
+    public function save(Request $request): Category
     {
         $category = new Category();
         $category->name = $request->get('name');
 
-
-        return $this->save($category);
+        return $this->categoryRepository->save($category);
     }
 
-    public function edit(int $id)
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function destroy(int $id): void
     {
-        return $this->categoryRepository->edit();
+        $this->categoryRepository->destroy($id);
     }
 
-    public function store()
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function getAllCategory(): LengthAwarePaginator
     {
-        // TODO: Implement store() method.
-    }
-
-    public function update(Request $request, int $id)
-    {
-        $product = $this->productRepository->findById($id);
-        $product->name = $request->get('name');
-        $product->price = $request->get('price');
-        $product->content = $request->get('content');
-        $product->description = $request->get('description');
-        $product->image = $request->file('image')->store('image');
-
-        return $this->productRepository->update($product, $id);
-    }
-
-    public function destroy(int $id)
-    {
-        return $this->productRepository->destroy($id);
-    }
-
-
-    public function getAllProduct()
-    {
-        return $this->productRepository->getAllProduct();
+        return $this->categoryRepository->getAllCategory();
     }
 }

@@ -18,6 +18,11 @@ class Auth
         $this->token = $token;
     }
 
+    public static function guard(string $string)
+    {
+
+    }
+
     public function toArray(): array
     {
         return [

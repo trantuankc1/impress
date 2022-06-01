@@ -2,56 +2,38 @@
 
 namespace Modules\Admin\Repositories\Mysql;
 
-use App\Models\Products;
-use http\Env\Request;
+use App\Models\Category;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Modules\Admin\Contracts\Repositories\Mysql\CategoryRepository;
-use Modules\Admin\Contracts\Repositories\Mysql\ProductRepository;
 
 class CategoryRepolmpl implements CategoryRepository
 {
 
-
-    public function save(Products $product)
+    /**
+     * @param Category $category
+     * @return Category
+     */
+    public function save(Category $category): Category
     {
-        $product->save();
+        $category->save();
 
-        return $product;
+        return $category;
     }
 
-    public function edit(int $id)
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function destroy(int $id): void
     {
-        return Products::query()->findOrFail($id);
+        Category::destroy($id);
     }
 
-    public function store()
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function getAllCategory(): LengthAwarePaginator
     {
-        // TODO: Implement store() method.
-    }
-
-    public function update(Products $products)
-    {
-        $products->update();
-
-        return $products;
-    }
-
-    public function destroy(int $id)
-    {
-        return Products::destroy($id);
-    }
-
-    public function getAllProduct()
-    {
-        return Products::paginate(10);
-    }
-
-    public function findById(int $id)
-    {
-        return Products::query()->findOrFail($id);
-    }
-
-    public function getAllCategory()
-    {
-        // TODO: Implement getAllCategory() method.
+        return Category::query()->paginate(10);
     }
 }

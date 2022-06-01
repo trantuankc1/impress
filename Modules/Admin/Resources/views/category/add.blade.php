@@ -24,7 +24,7 @@
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
-                <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên Danh Mục</label>

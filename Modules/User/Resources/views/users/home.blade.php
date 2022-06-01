@@ -35,132 +35,39 @@
                 </div>
                 <div class="list-product">
                     <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 product-item text-center">
-                            <a class="product-item-images" href="{{ route('user.detail') }}">
-                                <img class="img-fluids" src="{{ URL::asset('users/images/Layer_141-removebg-preview.png') }}" alt="">
-                            </a>
-                            <div class="product-item-title">
-                                <a href="{{ route('user.detail') }}">iMP4102 – Memo Desk Set</a>
+                        @foreach($listProduct as $item)
+                            <div class="col-xl-3 col-lg-4 col-md-6 product-item text-center">
+                                <a class="product-item-images" href="{{ route('user.detail', $item->id) }}">
+                                    <img class="img-fluids" src="/storage/{{ $item->image }}" alt="">
+                                </a>
+                                <div class="product-item-title">
+                                    <a href="{{ route('user.detail', $item->id) }}">{{ $item->name }}</a>
+                                </div>
+                                <div class="product-item-price">
+                                    <span>{{ number_format($item->price, 0, '', '.') }} đ</span>
+                                </div>
+                                <div class="product-item-buy">
+                                    <a href="{{ route('user.addCart', $item->id) }}" class="btn">Add to Enquiry</a>
+                                </div>
                             </div>
-                            <div class="product-item-price">
-                                <span>$10</span>
-                            </div>
-                            <div class="product-item-buy">
-                                <a href="{{ route('user.detail') }}" class="btn">Add to Enquiry</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 product-item text-center">
-                            <a class="product-item-images" href="">
-                                <img class="img-fluids" src="{{ URL::asset('users/images/Layer_141-removebg-preview.png') }}" alt="">
-                            </a>
-                            <div class="product-item-title">
-                                <a href="">iMP4102 – Memo Desk Set</a>
-                            </div>
-                            <div class="product-item-price">
-                                <span>$10</span>
-                            </div>
-                            <div class="product-item-buy">
-                                <a href="" class="btn">Add to Enquiry</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 product-item text-center">
-                            <a class="product-item-images" href="">
-                                <img class="img-fluids" src="{{ URL::asset('users/images/Layer_141-removebg-preview.png') }}" alt="">
-                            </a>
-                            <div class="product-item-title">
-                                <a href="">iMP4102 – Memo Desk Set</a>
-                            </div>
-                            <div class="product-item-price">
-                                <span>$10</span>
-                            </div>
-                            <div class="product-item-buy">
-                                <a href="" class="btn">Add to Enquiry</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 product-item text-center">
-                            <a class="product-item-images" href="">
-                                <img class="img-fluids" src="{{ URL::asset('users/images/Layer_141-removebg-preview.png') }}" alt="">
-                            </a>
-                            <div class="product-item-title">
-                                <a href="">iMP4102 – Memo Desk Set</a>
-                            </div>
-                            <div class="product-item-price">
-                                <span>$10</span>
-                            </div>
-                            <div class="product-item-buy">
-                                <a href="" class="btn">Add to Enquiry</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 product-item text-center">
-                            <a class="product-item-images" href="">
-                                <img class="img-fluids" src="{{ URL::asset('users/images/Layer_141-removebg-preview.png') }}" alt="">
-                            </a>
-                            <div class="product-item-title">
-                                <a href="">iMP4102 – Memo Desk Set</a>
-                            </div>
-                            <div class="product-item-price">
-                                <span>$10</span>
-                            </div>
-                            <div class="product-item-buy">
-                                <a href="" class="btn">Add to Enquiry</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 product-item text-center">
-                            <a class="product-item-images" href="">
-                                <img class="img-fluids" src="{{ URL::asset('users/images/Layer_141-removebg-preview.png') }}" alt="">
-                            </a>
-                            <div class="product-item-title">
-                                <a href="">iMP4102 – Memo Desk Set</a>
-                            </div>
-                            <div class="product-item-price">
-                                <span>$10</span>
-                            </div>
-                            <div class="product-item-buy">
-                                <a href="" class="btn">Add to Enquiry</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 product-item text-center">
-                            <a class="product-item-images" href="">
-                                <img class="img-fluids" src="{{ URL::asset('users/images/Layer_141-removebg-preview.png') }}" alt="">
-                            </a>
-                            <div class="product-item-title">
-                                <a href="">iMP4102 – Memo Desk Set</a>
-                            </div>
-                            <div class="product-item-price">
-                                <span>$10</span>
-                            </div>
-                            <div class="product-item-buy">
-                                <a href="" class="btn">Add to Enquiry</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 product-item text-center">
-                            <a class="product-item-images" href="">
-                                <img class="img-fluids" src="{{ URL::asset('users/images/Layer_141-removebg-preview.png') }}" alt="">
-                            </a>
-                            <div class="product-item-title">
-                                <a href="">iMP4102 – Memo Desk Set</a>
-                            </div>
-                            <div class="product-item-price">
-                                <span>$10</span>
-                            </div>
-                            <div class="product-item-buy">
-                                <a href="" class="btn">Add to Enquiry</a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
+                    {{ $listProduct->links() }}
+                    <style>
+                        nav{
+                            display: block;
+                        }
+
+                        .pagination{
+                            display: flex;
+                            justify-content: center;
+                        }
+                    </style>
                 </div>
                 <div class="view-all text-center">
                     <a href="" class="btn">View all</a>
                 </div>
             </div>
-            <!--                    <div class="customised mt-5 mb-5 clearfix">-->
-            <!--                        <div class="customised-left">-->
-            <!--                            <img src="images/Screenshot from 2022-05-17 22-27-15.png" alt="">-->
-            <!--                        </div>-->
-            <!--                        <div class="customised-right">-->
-            <!--                            <img src="images/banner-right.png" alt="">-->
-            <!--                        </div>-->
-            <!--                    </div>-->
             <div class="new-products mb-5">
                 <div class="product-title text-center">
                     <h1>New products</h1>

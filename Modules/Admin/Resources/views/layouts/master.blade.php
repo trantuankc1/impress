@@ -23,5 +23,6 @@
 
 </div>
 @include('admin::layouts.script')
+@yield('scripts')
 </body>
 </html>

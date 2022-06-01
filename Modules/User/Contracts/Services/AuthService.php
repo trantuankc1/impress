@@ -11,9 +11,8 @@ interface AuthService
 {
     /**
      * @param LoginUserRequest $request
-     * @return RedirectResponse
      */
-    public function login(LoginUserRequest $request): RedirectResponse;
+    public function login(LoginUserRequest $request);
 
     /**
      * @param RegisterUserRequest $request
