@@ -11,6 +11,8 @@
                     <td>ID</td>
                     <td>Tên danh mmục</td>
                     <td>Xóa</td>
+                    <td>Sửa</td>
+
                 </tr>
                 <tbody>
                     @foreach($category as $categorys)
@@ -24,6 +26,7 @@
                                     <button class="btn btn-danger"><i style="width: 30px;" class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </td>
+                            <td><a href="{{ route('categories.edit', $categorys) }}" class="btn btn-info"><i style="width: 30px;" class="fa-solid fa-pen"></i> </a></td>
                         </tr>
                     @endforeach
                 </tbody>

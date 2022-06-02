@@ -28,6 +28,6 @@ class ListAdminServicelmpl implements ListAdminService
 
     public function getAllAdmin()
     {
-//        return $this->listAdminRepository->getAllAdmin();
+        return $this->listAdminRepository->getAllAdmin();
     }
 }

@@ -36,4 +36,16 @@ class CategoryRepolmpl implements CategoryRepository
     {
         return Category::query()->paginate(10);
     }
+
+    public function edit(int $id)
+    {
+        return Category::findOrFail($id);
+    }
+
+    public function update(Category $category)
+    {
+        $category->update();
+
+        return $category;
+    }
 }

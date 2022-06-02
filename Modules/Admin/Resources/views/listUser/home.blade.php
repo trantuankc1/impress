@@ -11,6 +11,7 @@
                     <td>Thời gian tạo </td>
                     <td>Trạng thái</td>
                     <td>Xóa</td>
+                    <td>Khóa</td>
                 </tr>
                 <tbody>
                         @foreach($data as $user)
@@ -20,9 +21,9 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->created_at }} </td>
                                 @if($user->status == 1)
-                                    <td>Đang hoạt động</td>
+                                    <td style="color: green;">Đang hoạt động</td>
                                 @else
-                                    <td>Đã tạm dừng hoạt động</td>
+                                    <td style="color: red">Tài khoản đã bị khóa </td>
                                 @endif
                                 <td>
                                     <form action="{{ route('users.destroy', $user) }}" method="POST">
@@ -30,6 +31,21 @@
                                         @method('DELETE')
                                         <button class="btn btn-danger"><i style="width: 30px;" class="fa-solid fa-trash-can"></i></button>
                                     </form>
+                                </td>
+                                <td>
+                                    @if($user->status == 1)
+                                        <form method="post" action="{{ route('users.update', $user) }}">
+                                            @csrf
+                                            @method('PUT')
+                                            <button class="btn btn-danger"><i class="fa-solid fa-lock"></i></button>
+                                        </form>
+                                        @else
+                                        <form method="post" action="{{ route('users.edit', $user) }}">
+                                            @csrf
+                                            @method('get')
+                                            <button class="btn btn-success"><i class="fa-solid fa-unlock"></i></button>
+                                        </form>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

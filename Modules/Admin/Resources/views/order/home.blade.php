@@ -17,9 +17,9 @@
                         <td>{{ $listOrder->id }}</td>
                         <td>{{ $listOrder->user_id }}</td>
                         @if($listOrder->status == 1)
-                            <td>Đơn hàng đã xác nhận</td>
+                            <td style="color: seagreen">Đơn hàng đã xác nhận</td>
                         @else
-                            <td>Đơn hàng chưa xác nhận</td>
+                            <td style="color: red">Đơn hàng chưa xác nhận</td>
                         @endif
                         <td>{{ $listOrder->created_at }}</td>
                         <td>{{ $listOrder->updated_at }} </td>

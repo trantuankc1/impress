@@ -24,6 +24,7 @@
                 <td>ID</td>
                 <td>ID Sản phẩm</td>
                 <td>id Đơn hàng</td>
+                <td>Ảnh</td>
                 <td>Số lượng</td>
                 <td>Giá</td>
                 <td>Tổng tiền</td>
@@ -34,8 +35,9 @@
             @foreach($orderDetail as $key => $showDetail)
                 <tr>
                     <td>{{ ++$key }}</td>
-                    <td>{{ $showDetail->product_id }}</td>
+                    <td>{{ $showDetail->product->name }}</td>
                     <td>{{ $showDetail->order_id }}</td>
+                    <td><img src="/storage/{{ $showDetail->product->image }}" height="100px"></td>
                     <td>{{ $showDetail->quantity }}</td>
                     <td>{{ number_format($showDetail->unit_price)}} VND</td>
                     <td>{{ number_format($showDetail->quantity * $showDetail->unit_price) }} VND</td>

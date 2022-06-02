@@ -4,6 +4,7 @@ namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Admin\Contracts\Services\UserService;
 
@@ -44,5 +45,19 @@ class UserController extends Controller
         return redirect()->route('listUser.index');
     }
 
+
+    public function update(int $id)
+    {
+         $this->userService->update($id);
+
+         return back();
+    }
+
+    public function edit(int $id)
+    {
+        $this->userService->active($id);
+
+        return back();
+    }
 
 }

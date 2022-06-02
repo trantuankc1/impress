@@ -26,4 +26,19 @@ class UserRepoImpl implements UserRepository
         User::destroy($id);
         // TODO: Implement destroy() method.
     }
+
+    public function finId(int $id)
+    {
+        return User::query()->findOrFail($id);
+    }
+
+    public function update(int $id)
+    {
+        return User::where('id', $id)->update(['status'=>0]);
+    }
+
+    public function active(int $id)
+    {
+        return User::where('id', $id)->update(['status'=>1]);
+    }
 }

@@ -61,4 +61,17 @@ class CategoryController extends Controller
 
        return redirect()->route('categories.index');
     }
+
+    public function edit($id)
+    {
+        $category = $this->categoryService->edit($id);
+        return view('admin::category.edit', compact('category'));
+    }
+
+    public function update(Request $request, int $id)
+    {
+        $this->categoryService->update($request, $id);
+
+        return redirect()->route('categories.index');
+    }
 }

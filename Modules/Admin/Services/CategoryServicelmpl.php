@@ -48,4 +48,17 @@ class CategoryServicelmpl implements CategoryService
     {
         return $this->categoryRepository->getAllCategory();
     }
+
+    public function edit(int $id)
+    {
+        return $this->categoryRepository->edit($id);
+    }
+
+    public function update(Request $request, int $id)
+    {
+        $category = $this->categoryRepository->edit($id);
+        $category->name = $request->get('name');
+
+        return $this->categoryRepository->update($category);
+    }
 }

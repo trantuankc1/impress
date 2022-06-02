@@ -13,7 +13,7 @@ class CheckLoginSupperAdmin
     {
         if((auth()->guard('admin')->user()->role == 1))
         {
-            return redirect($next);
+            return $next($request);
         }
         return redirect('/admin');
     }

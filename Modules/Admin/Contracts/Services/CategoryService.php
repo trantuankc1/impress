@@ -24,4 +24,8 @@ interface CategoryService
      * @return LengthAwarePaginator
      */
     public function getAllCategory(): LengthAwarePaginator;
+
+    public function edit(int $id);
+
+    public function update(Request $request, int $id);
 }

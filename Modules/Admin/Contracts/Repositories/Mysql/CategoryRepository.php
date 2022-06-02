@@ -25,6 +25,9 @@ interface CategoryRepository
      */
     public function getAllCategory(): LengthAwarePaginator;
 
+    public function edit(int $id);
+
+    public function update(Category $category);
 
 
 }

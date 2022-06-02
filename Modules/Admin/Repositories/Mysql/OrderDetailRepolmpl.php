@@ -24,7 +24,7 @@ class OrderDetailRepolmpl implements OrderDetailRepository
      */
     public function getOrderDetail(int $id): Collection
     {
-        return OrderDetail::with('order')->where('order_id', $id)->get();
+        return OrderDetail::with('order', 'product')->where('order_id', $id)->get();
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Services;
 
+use http\Env\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Modules\Admin\Contracts\Services\UserService;
 use Modules\Admin\Contracts\Repositories\Mysql\UserRepository;
@@ -39,6 +40,22 @@ class UserServiceImpl implements UserService
         {
             $this->userRepository->destroy($id);
         }
-
     }
+
+    public function finID(int $id)
+    {
+        return $this->userRepository->finId($id);
+    }
+
+
+    public function update(int $id)
+    {
+        return $this->userRepository->update($id);
+    }
+
+    public function active(int $id)
+    {
+        return $this->userRepository->active($id);
+    }
+
 }

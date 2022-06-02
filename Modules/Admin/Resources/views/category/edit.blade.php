@@ -24,19 +24,17 @@
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
-                <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('categories.update', $category) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên Danh Mục</label>
                             <input type="text" name='name' class="form-control" id="exampleInputEmail1"
-                                   placeholder="tên danh mục">
+                                   placeholder="tên danh mục" value="{{ $category->name }}">
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+                        <button type="submit" class="btn btn-primary" style="margin-left: 20px;">Cập nhật</button>
                 </form>
             </div>
         </section>
