@@ -12,4 +12,9 @@ class OrderDetail extends Model
     use Notifiable;
 
     protected $table = 'order_details';
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
 }

@@ -12,4 +12,14 @@ class Order extends Model
     use Notifiable;
 
     protected $table = 'orders';
+
+    public function orderdetaile()
+    {
+        return $this->belongsTo(OrderDetail::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

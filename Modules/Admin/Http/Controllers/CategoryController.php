@@ -47,7 +47,7 @@ class CategoryController extends Controller
     {
         $this->categoryService->save($request);
 
-        return redirect()->route('category.index');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -59,6 +59,6 @@ class CategoryController extends Controller
     {
        $this->categoryService->destroy($id);
 
-       return redirect()->route('category.index');
+       return redirect()->route('categories.index');
     }
 }

@@ -26,7 +26,7 @@
                         <td>{{ $listContact->created_at }}</td>
                         <td>{{ $listContact->updated_at }}</td>
                         <td>
-                            <form action="{{ route('listContact.destroy', $listContact) }}" method="post">
+                            <form action="{{ route('contacts.destroy', $listContact) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger"><i style="width: 30px;" class="fa-solid fa-trash-can"></i></button>

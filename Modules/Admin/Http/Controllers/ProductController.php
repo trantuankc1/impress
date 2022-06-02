@@ -3,7 +3,6 @@
 namespace Modules\Admin\Http\Controllers;
 
 use App\Models\Category;
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
 use Illuminate\View\View;

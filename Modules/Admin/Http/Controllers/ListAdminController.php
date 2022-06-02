@@ -29,9 +29,7 @@ class ListAdminController extends Controller
     {
         $list = $this->listAdminService->getAllAdmin();
 
-        return view('admin::admin.home', [
-            'list' => $list
-        ]);
+        return view('admin::admin.home', compact('list'));
     }
 
 }

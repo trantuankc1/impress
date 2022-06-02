@@ -26,4 +26,9 @@ class User extends Authenticatable
     {
         return UserFactory::new();
     }
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
 }

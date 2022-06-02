@@ -2,8 +2,6 @@
 
 namespace Modules\Admin\Contracts\Services;
 
-use App\Models\Admin;
-
 interface ListAdminService
 {
     /**

@@ -76,7 +76,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{ route('category.index') }}" class="nav-link">
+                                        <a href="{{ route('categories.index') }}" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Tất Cả Danh Mục Sản Phẩm</p>
                                         </a>
@@ -129,7 +129,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{ route('listContact.index') }}" class="nav-link">
+                                        <a href="{{ route('contacts.index') }}" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Danh sách liên hệ</p>
                                         </a>

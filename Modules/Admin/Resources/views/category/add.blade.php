@@ -24,7 +24,7 @@
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
-                <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên Danh Mục</label>
@@ -34,9 +34,7 @@
                     </div>
                     <!-- /.card-body -->
                     @csrf
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+                        <button style="margin-left: 20px;" type="submit" class="btn btn-primary">Thêm Mới</button>
                 </form>
             </div>
         </section>

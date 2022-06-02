@@ -12,9 +12,9 @@
             <tbody>
             @foreach($findUser as $value)
                 <tr>
-                    <td>{{ $value->name }}</td>
-                    <td>{{ $value->phone }}</td>
-                    <td>{{ $value->address }}</td>
+                    <td>{{ $value->user->name }}</td>
+                    <td>{{ $value->user->phone }}</td>
+                    <td>{{ $value->user->address }}</td>
                 </tr>
             @endforeach
             </tbody>
@@ -26,7 +26,6 @@
                 <td>id Đơn hàng</td>
                 <td>Số lượng</td>
                 <td>Giá</td>
-                <td>Ảnh</td>
                 <td>Tổng tiền</td>
                 <td>Thời gian tạo</td>
                 <td>Thời gian cập nhật</td>
@@ -35,11 +34,10 @@
             @foreach($orderDetail as $key => $showDetail)
                 <tr>
                     <td>{{ ++$key }}</td>
-                    <td>{{ $showDetail->name }}</td>
+                    <td>{{ $showDetail->product_id }}</td>
                     <td>{{ $showDetail->order_id }}</td>
                     <td>{{ $showDetail->quantity }}</td>
                     <td>{{ number_format($showDetail->unit_price)}} VND</td>
-                    <td><img style="width: 100px; height: auto" src="/storage/{{ $showDetail->image }}" alt=""></td>
                     <td>{{ number_format($showDetail->quantity * $showDetail->unit_price) }} VND</td>
 
                     <td>{{ $showDetail->created_at }}</td>

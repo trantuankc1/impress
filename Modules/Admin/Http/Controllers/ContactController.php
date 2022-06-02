@@ -25,13 +25,13 @@ class ContactController extends Controller
     /**
      * @return View
      */
-    public function index():View
+    public function index(): View
     {
         $contact = $this->contactService->getAllContact();
 
-        return view('admin::contact.home',[
+        return view('admin::contact.home', [
             'contact' => $contact,
-        ] );
+        ]);
     }
 
     /**
@@ -42,6 +42,6 @@ class ContactController extends Controller
     {
         $this->contactService->destroy($id);
 
-        return redirect()->route('listContact.index');
+        return redirect()->route('contacts.index');
     }
 }
