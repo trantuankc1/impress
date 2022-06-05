@@ -41,7 +41,7 @@ class AuthServiceImpl implements AuthService
     {
         $credentials = $request->only(['email', 'password']);
         if (Auth::attempt($credentials)) {
-            if (Auth::user()->email_verified_at === null) {
+            if (Auth::user()->status == 0) {
                 $idUser = Auth::user()->id;
                 Auth::logout();
 
@@ -75,6 +75,7 @@ class AuthServiceImpl implements AuthService
             $user->name = $request->input('name');
             $user->email = $request->input('email');
             $user->password = Hash::make($request->input('password'));
+            $user->status = 0;
             $this->authRepository->save($user);
         }
 

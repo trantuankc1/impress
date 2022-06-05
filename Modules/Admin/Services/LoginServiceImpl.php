@@ -20,9 +20,6 @@ class LoginServiceImpl implements LoginService
         $credentials = $request->only(['email', 'password']);
         if (Auth::guard('admin')->attempt($credentials)) {
             return redirect()->route('admin.home');
-        } elseif (auth()->user()->role = 2)
-        {
-            return redirect()->route('admin.home');
         }
         else {
             return redirect()->back()->withInput();

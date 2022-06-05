@@ -2,7 +2,7 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('admin.home') }}" class="nav-link">Trang Chủ </a>
+            <a href="{{ route('admin.home') }}" class="nav-link {{ Route::is('admin') ? 'active' : '' }} ">Trang Chủ </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ route('contacts.index') }}" class="nav-link">Liên Hệ</a>

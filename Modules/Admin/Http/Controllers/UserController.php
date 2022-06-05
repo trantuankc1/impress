@@ -42,7 +42,7 @@ class UserController extends Controller
     {
         $this->userService->destroy($id);
 
-        return redirect()->route('listUser.index');
+        return redirect()->route('users.index');
     }
 
 

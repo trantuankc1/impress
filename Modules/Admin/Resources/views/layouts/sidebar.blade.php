@@ -49,8 +49,8 @@
                             <!-- Add icons to the links using the .nav-icon class
                                  with font-awesome or any other icon font library -->
 
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                            <li class="nav-item   {{ Request::routeIs('products.index') ? ' menu-is-opening menu-open' : '' }}" >
+                                <a href="#" class="nav-link ">
                                     <i class="nav-icon fas fa-copy"></i>
                                     <p>
                                         Quản Lý Sản Phẩm
@@ -58,16 +58,16 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="{{ route('products.index') }}" class="nav-link">
+                                    <li class="nav-item ">
+                                        <a href="{{ route('products.index') }}" class="nav-link  {{ Request::routeIs('products.index') ? 'active' : '' }}">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Tất Cả Sản Phẩm</p>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                            <li class="nav-item" >
+                                <a href="#" class="nav-link  {{ Request::routeIs('products.index') ? ' menu-is-opening menu-open' : '' }}">
                                     <i class="fas fa-angle-left right"></i>
                                 <p>
                                     <i class="nav-icon fas fa-edit"></i>
@@ -76,7 +76,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{ route('categories.index') }}" class="nav-link">
+                                        <a href="{{ route('categories.index') }}" class="nav-link  {{ Request::routeIs('products.index') ? ' menu-is-opening menu-open' : '' }}">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Tất Cả Danh Mục Sản Phẩm</p>
                                         </a>
@@ -93,7 +93,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{ route('users.index') }}" class="nav-link">
+                                        <a href="{{ route('users.index') }}" class="nav-link  {{ Request::routeIs('products.index') ? ' menu-is-opening menu-open' : '' }}">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Danh sách người dùng</p>
                                         </a>
@@ -111,7 +111,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{ route('order.index') }}" class="nav-link">
+                                        <a href="{{ route('order.index') }}" class="nav-link  {{ Request::routeIs('products.index') ? ' menu-is-opening menu-open' : '' }}">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Danh sách đơn hàng</p>
                                         </a>
@@ -129,7 +129,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{ route('contacts.index') }}" class="nav-link">
+                                        <a href="{{ route('contacts.index') }}" class="nav-link  {{ Request::routeIs('products.index') ? ' menu-is-opening menu-open' : '' }}">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Danh sách liên hệ</p>
                                         </a>
@@ -148,7 +148,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="{{ route('admins.index') }}" class="nav-link">
+                                        <a href="{{ route('admins.index') }}" class="nav-link  {{ Request::routeIs('products.index') ? ' menu-is-opening menu-open' : '' }}">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Danh sách admin</p>
                                         </a>
